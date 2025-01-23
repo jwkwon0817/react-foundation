@@ -6,19 +6,17 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [react(), vanillaExtractPlugin()],
   build: {
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
+      name: 'ReactFoundation',
       formats: ['es', 'cjs'],
       fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
       output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
+        assetFileNames: '[name][extname]',
       },
     },
   },
