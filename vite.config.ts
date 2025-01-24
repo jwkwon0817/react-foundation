@@ -11,13 +11,31 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ReactFoundation',
       formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format === 'es' ? 'mjs' : 'js'}`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
-      output: {
-        assetFileNames: '[name][extname]',
-      },
+      external: ['react', 'react-dom', 'classnames'],
+      output: [
+        {
+          format: 'es',
+          dir: 'dist/esm',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
+          entryFileNames: '[name].js',
+          sourcemap: true,
+          exports: 'named',
+          hoistTransitiveImports: false,
+        },
+        {
+          format: 'cjs',
+          dir: 'dist/cjs',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
+          entryFileNames: '[name].js',
+          sourcemap: true,
+          exports: 'named',
+          hoistTransitiveImports: false,
+        },
+      ],
     },
   },
   resolve: {

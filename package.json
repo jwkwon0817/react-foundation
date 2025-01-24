@@ -1,11 +1,11 @@
 {
   "name": "@jwkwon0817/react-foundation",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "prepublish": "bun run build",
     "build:types": "tsc --project tsconfig.lib.json",
-    "build": "vite build && bun run build:types",
+    "build": "rimraf dist && vite build && bun run build:types",
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -16,21 +16,17 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
     },
-    "./lib": {
-      "import": "./dist/lib/index.mjs",
-      "require": "./dist/lib/index.js",
-      "types": "./dist/lib/index.d.ts"
-    },
-    "./style.css": "./dist/style.css"
+    "./*": {
+      "types": "./dist/types/*",
+      "import": "./dist/esm/*",
+      "require": "./dist/cjs/*"
+    }
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.17.0",

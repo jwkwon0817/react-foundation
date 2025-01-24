@@ -4,5 +4,11 @@ import Stack, { StackProps } from '../Stack';
 type HStackProps = Omit<StackProps, 'direction'>;
 
 export default function HStack(props: HStackProps) {
-  return <Stack {...props} direction={Direction.HORIZONTAL} />;
+  const { children, ...restProps } = props;
+
+  return (
+    <Stack {...restProps} direction={Direction.HORIZONTAL}>
+      {children}
+    </Stack>
+  );
 }

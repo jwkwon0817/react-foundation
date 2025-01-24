@@ -4,5 +4,11 @@ import Stack, { StackProps } from '../Stack';
 type VStackProps = Omit<StackProps, 'direction'>;
 
 export default function VStack(props: VStackProps) {
-  return <Stack {...props} direction={Direction.VERTICAL} />;
+  const { children, ...restProps } = props;
+
+  return (
+    <Stack {...restProps} direction={Direction.VERTICAL}>
+      {children}
+    </Stack>
+  );
 }
