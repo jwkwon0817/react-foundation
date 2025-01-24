@@ -1,11 +1,11 @@
 {
   "name": "@jwkwon0817/react-foundation",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "scripts": {
-    "prepublish": "bun run build",
+    "prepublish": "pnpm run build",
     "build:types": "tsc --project tsconfig.lib.json",
-    "build": "rimraf dist && vite build && bun run build:types",
+    "build": "rimraf dist && vite build && pnpm run build:types",
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
