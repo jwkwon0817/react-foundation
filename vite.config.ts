@@ -10,8 +10,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ReactFoundation',
-      formats: ['es', 'cjs'],
     },
+    sourcemap: true,
     rollupOptions: {
       external: ['react', 'react-dom', 'classnames'],
       output: [
@@ -21,7 +21,6 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src',
           entryFileNames: '[name].js',
-          sourcemap: true,
           exports: 'named',
           hoistTransitiveImports: false,
         },
@@ -31,7 +30,6 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src',
           entryFileNames: '[name].js',
-          sourcemap: true,
           exports: 'named',
           hoistTransitiveImports: false,
         },

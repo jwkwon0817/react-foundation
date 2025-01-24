@@ -14,5 +14,5 @@
     "allowImportingTsExtensions": false
   },
   "include": ["src/**/*"],
-  "exclude": ["**/*.stories.tsx", "**/*.test.tsx", "src/stories", "node_modules"]
+  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/storybook/*", "**/*.css.ts"]
 }
