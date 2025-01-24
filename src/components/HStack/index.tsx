@@ -1,4 +1,4 @@
-import { Direction } from '~/lib/enums/stack-direction';
+import { Direction } from '@/lib/enums/stack-direction';
 import Stack, { StackProps } from '../Stack';
 
 type HStackProps = Omit<StackProps, 'direction'>;

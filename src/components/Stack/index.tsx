@@ -1,10 +1,10 @@
 import * as s from './style.css';
 
+import { Direction } from '@/lib/enums/stack-direction';
+import { ChildrenProps } from '@/lib/types/children-props';
+import { Padding } from '@/lib/types/padding';
+import { getPaddingString } from '@/lib/utils/padding';
 import cn from 'classnames';
-import { Direction } from '~/lib/enums/stack-direction';
-import { ChildrenProps } from '~/lib/types/children-props';
-import { Padding } from '~/lib/types/padding';
-import { getPaddingString } from '~/lib/utils/padding';
 
 export interface StackProps {
   direction: Direction;
