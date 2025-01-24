@@ -1,6 +1,6 @@
 {
   "name": "@jwkwon0817/react-foundation",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "prepublish": "bun run build",
