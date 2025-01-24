@@ -1,6 +1,6 @@
 {
   "name": "@jwkwon0817/react-foundation",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "scripts": {
     "prepublish": "bun run build",
@@ -26,10 +26,10 @@
       "import": "./dist/esm/style.css",
       "require": "./dist/cjs/style.css"
     },
-    "./lib/*": {
-      "types": "./dist/types/lib/*",
-      "import": "./dist/esm/lib/*",
-      "require": "./dist/cjs/lib/*"
+    "./lib": {
+      "types": "./dist/types/lib/index.d.ts",
+      "import": "./dist/esm/lib/index.js",
+      "require": "./dist/cjs/lib/index.js"
     }
   },
   "dependencies": {

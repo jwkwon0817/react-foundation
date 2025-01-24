@@ -13,7 +13,7 @@ export default defineConfig({
     },
     sourcemap: true,
     rollupOptions: {
-      external: ['react', 'react-dom', 'classnames'],
+      external: ['react', 'react-dom', 'classnames', 'react/jsx-runtime'],
       output: [
         {
           format: 'es',
